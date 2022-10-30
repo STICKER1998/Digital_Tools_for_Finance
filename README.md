@@ -2,6 +2,10 @@ Digital Tools for Finance
 ==============================
 
 A repo for Digital Tools for Finance before midterm!
+| Date    | topic
+| ----    | ----
+
+| week 2 | [project environment](./project-environment.md)<br/>[coding environment](./coding-environment.md)
 
 Project Organization
 ------------
