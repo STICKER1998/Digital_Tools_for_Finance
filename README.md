@@ -1,15 +1,17 @@
 Digital Tools for Finance —— Midterm
 ==============================
-A repo for Digital Tools for Finance before midterm!
+This branch contains six homeworks of the course Digital Tools for Fiannce, there are three teammates as below 
 # Teammates
-|Name | Student Number|
-| --- |---|
-|Zifeng Tang | 21-724-093|
+|Name        | Student Number|
+| ---        |---            |
+|Zifeng Tang | 21-724-093    |
+|Haoran Zhu  |               |
+|Yuzhi Mao   |               |
 
 # Contents
-| Date    | topic |
-| ---    | --- |
-| week 2 | [project environment](./project-environment.md)|
+|Homework 1  | [Homework 2](./Homework-2.md)| Homework 3|
+|Homework 4  | Homework 5 | Homework 6|
+
 
 
 
