@@ -4,9 +4,9 @@ This branch contains six homeworks of the course Digital Tools for Fiannce, ther
 # Teammates
 |Name        | Student Number|
 | ---        |---            |
-|Zifeng Tang | 21-724-093    |
-|Haoran Zhu  |               |
-|Yuzhi Mao   |               |
+|Zifeng Tang | 21-742-093    |
+|Haoran Zhu  | 21-742-069    |
+|Yuzhi Mao   | 21-742-218    |
 
 # Contents
 |[Homework 1](./Homework-1.md)| [Homework 2](./Homework-2.md)| [Homework 3](./Homework-3.md)|
