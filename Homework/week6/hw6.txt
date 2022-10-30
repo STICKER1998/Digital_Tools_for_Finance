@@ -10,7 +10,7 @@ Specify a request string to retrieve 75 observations of klines data for BTCUSDT 
 https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1d&startTime=1661990400000&limit=75
 
 Write a function (in Python, R or Julia) that retrieves 75 observations of klines data for a generic currency pair since a generic date. The function should take the currency pair and start date as input parameters.
-The rest is about the FRED API:
+
 binance_kline.py
 
 The rest is about the FRED API:
