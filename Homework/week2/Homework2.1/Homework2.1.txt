@@ -1,0 +1,17 @@
+# 1.Get the template using cookiecutter
+cookiecutter https://github.com/drivendata/cookiecutter-data-science
+
+# 2.Git Init /add/commit/push
+git init
+git add .
+git commit -m "Initial V-1.0"
+git push --set-upstream origin master
+
+# 3.Construct the branch "midterm"
+git branch midterm
+git checkout midterm
+
+# 4.Under the branch construct some folders to upload the homeworks
+
+
+
