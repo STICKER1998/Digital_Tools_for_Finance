@@ -1,0 +1,31 @@
+mkdir temp
+
+cd temp
+
+echo "hello world" > hello.txt
+
+ls
+
+ps
+
+sudo kill -9 666
+
+echo "$PATH" > path.txt
+
+find .. -name "hello.txt"
+
+find / -name "*.png"
+
+whereis echo
+
+man ps | grep "Select all processes"
+
+history 20 > commands.txt
+
+nano runner.sh
+echo "$1"
+./runner.sh hello
+
+We can use the cron arrangement, i.e., * * * * * runner.sh
+Each star refers to the Minute, Hour, Day of Month, Month, Day of Week respectively.
+We hope to run the runner.sh every second day at 17:00, only need to use 0 17 */2 instead of the first three stars.

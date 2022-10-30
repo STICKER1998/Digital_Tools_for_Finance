@@ -1,0 +1,20 @@
+ 1528  l
+ 1529  ls
+ 1530  cd desktop
+ 1531  cd dtff
+ 1532  ls
+ 1533  cd homework
+ 1534  ls
+ 1535  mkdir week1
+ 1536  mkdir temp
+ 1537  cd temp
+ 1538  echo "hello world" > hello.txt
+ 1539  ls
+ 1540  ps
+ 1541  sudo kill -9 666
+ 1542  echo "$PATH" > path.txt
+ 1543  find .. -name "hello.txt"
+ 1544  find / -name "*.png"
+ 1545  whereis echo
+ 1546  man ps | grep "Select all processes"
+ 1547  history 20 > commands.txt
