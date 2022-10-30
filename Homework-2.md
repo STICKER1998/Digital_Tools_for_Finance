@@ -33,12 +33,14 @@ We only show the key step 4 as below:
 2. write a `Dockerfile` that would allow anyone to do the same plotting that you did, in the same language, given that the .csv file above is present in folder `data/`; anyone should be able to `cd` into some folder, copy your Dockerfile and `data/coding-environment-exercise.csv` therein, build the image, create a container, plot the data and either see the plot or be able to copy it to the local machine.
 
 ## Solutions 
-1.We first write a python script `docker_test.py` which is in `scr/` and `Homework/week2/Homework2.2` to plot data in `data/coding-environment-exercise.csv`;
+1. We first write a python script `docker_test.py` which is in `scr/` and `Homework/week2/Homework2.2` to plot data in `data/coding-environment-exercise.csv`;
 
-2.Write a `requirements.txt` to give a list of libs which should be installed. 
+2. Write a `requirements.txt` to give a list of libs which should be installed;
 
-3.Write a `Dockerfile` in order to construct a image in Doceker.
+3. Write a `Dockerfile` in order to construct a image in Doceker;
 
-4
+4. **Construct an image**: in the terminal, we use the command Line to construct an image (the image is named as "dtff-hw2"): `docker build  --tag dtff-hw2` ;
+
+5. **Construct a container**: After a long wait, we can use the image to construct a container by the Command Line: `docker run -it -v "$(pwd)/out:/out" dtff-hw2`;  A new folder which is called `out/` would be generated in the present folder which contains the figure of the data `coding-environment-exercise.csv`;
 
 
