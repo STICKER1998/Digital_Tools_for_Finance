@@ -23,7 +23,7 @@ The first part is about the Binance API:
 
 3. Specify a request string to retrieve 75 observations of klines data for BTCUSDT since 2022-09-01.
   
-    `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1d&startTime=1661990400000&limit=75`
+    https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1d&startTime=1661990400000&limit=75
 
 4. Write a function (in Python, R or Julia) that retrieves 75 observations of klines data for a generic currency pair since a generic date. The function should take the currency pair and start date as input parameters. `binance_kline.py` which is in `Homework/week6/`.
 
