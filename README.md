@@ -1,6 +1,6 @@
 Digital Tools for Finance —— Midterm
 ==============================
-This branch contains six homeworks of the course Digital Tools for Fiannce, there are three teammates as below 
+This branch contains six homeworks of the course Digital Tools for Finance, there are three teammates as below 
 # Teammates
 |Name        | Student Number|
 | ---        |---            |
