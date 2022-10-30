@@ -39,8 +39,8 @@ We only show the key step 4 as below:
 
 3. Write a `Dockerfile` in order to construct a image in Doceker;
 
-4. **Construct an image**: in the terminal, we use the command Line to construct an image (the image is named as "dtff-hw2"): `docker build  --tag dtff-hw2` ;
+4. **Build a container image**: in the terminal, we use the command Line to construct an image (the image is named as "dtff-hw2"): `docker build  --tag dtff-hw2` ;
 
-5. **Construct a container**: After a long wait, we can use the image to construct a container by the Command Line: `docker run -it -v "$(pwd)/out:/out" dtff-hw2`;  A new folder which is called `out/` would be generated in the present folder which contains the figure of the data `coding-environment-exercise.csv`;
+5. **Start a container**: After a long wait, we can start a container by the Command Line: `docker run -it -v "$(pwd)/out:/out" dtff-hw2`;  A new folder which is called `out/` would be generated in the present folder which contains the figure of the data `coding-environment-exercise.csv`;
 
 
