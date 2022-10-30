@@ -11,4 +11,7 @@ Many command Lines is the same as `Exercise 3`, we only point something importan
   git push origin midterm
 ```
 
-2. 
+2. Don't use `git merge` frequently, otherwise some teammates would be confused about it.
+
+
+3.When you want to merge the branch 
