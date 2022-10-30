@@ -11,7 +11,7 @@ Many command Lines is the same as `Exercise 3`, we only point something importan
   git push origin midterm
 ```
 
-2. Don't use `git merge` frequently, otherwise some teammates would be confused about it.
+2. Don't use `git merge` frequently, otherwise some teammates would be confused about it and some files may be deleted or changed to the version what you don't need.
 
 
 3. When you want to merge the branch `feature-1` to the main branch (in this problem `midterm`), you should first use `git pull` to update the version and switch to the main branch. 
