@@ -9,7 +9,7 @@
 ```
   git pull origin midterm
 ```
-## Step2: Change the files in the folder Homework: You can add/delete/change the folders or files
+## Step2: Change the files in the folder `Homework/`: You can add/delete/change the folders or files
 ```
   git add .
   git commit -m "(#WHAT YOU DID: eg: Upload Homework 2)"
