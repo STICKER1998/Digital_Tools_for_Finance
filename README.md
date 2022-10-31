@@ -12,6 +12,6 @@ This branch contains six homeworks of the course Digital Tools for Finance, ther
 |[Homework 1](./Homework-1.md)| [Homework 2](./Homework-2.md)| [Homework 3](./Homework-3.md)|[Homework 4](./Homework-4.md)| [Homework 5](./Homework-5.md)| [Homework 6](./Homework-6.md)|
 
 ## Warning for Teammates: Please read [Upload-Download Steps](./Upload-Download-Steps.md)
-## Project Topic: `Risk Parity Model Based on Different Risk Metrics`
-1. In the whole research process, we would first analyze the theoretical model and analyze the characteristics of different risk metrics;
-2. Next, we will conduct an empirical analysis to compare the performance of risk parity models based on different risk metrics;
+## Project Topic: `Risk Parity Model Based on Different Risk Measures`
+1. In the whole research process, we would first analyze the theoretical model and analyze the characteristics of different risk measures;
+2. Next, we will conduct an empirical analysis to compare the performance of risk parity models based on different risk measures;
