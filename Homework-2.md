@@ -55,15 +55,40 @@ We only show the key step 4 as below:
 2. Write a `requirements.txt` to give a list of libs which should be installed;
 ```
   numpy==1.23.4
-  Matplotlib==3.4.*
+  Matplotlib==3.4.1
   pandas==1.5.1
 ```
 
 3. Write a `Dockerfile` in order to construct a image in Doceker;
+```
+  # syntax=docker/dockerfile:1
 
+  # Based On the image of Python
+  FROM python:3.10
+
+  # The Info of Author
+  MAINTAINER ZIFENGTANG
+
+  # # Setting the working directory to /code
+  WORKDIR /code
+
+  # # Copy the current directory contents into the container at /code
+  ADD . /code
+
+  # pip the libs
+  RUN pip install --upgrade pip 
+  RUN pip install --requirement ./requirements.txt  
+
+
+  # Run docker_test.py when the container launches
+  CMD ["python","docker_test.py"]
+```
 
 4. **Build a container image**: in the terminal, we use the command Line to construct an image (the image is named as "dtff-hw2"): `docker build  --tag dtff-hw2` ;
 
-5. **Start a container**: After a long wait, we can start a container by the Command Line: `docker run -it -v "$(pwd)/out:/out" dtff-hw2`;  A new folder which is called `out/` would be generated in the present folder which contains the figure of the data `coding-environment-exercise.csv`;
+5. **Start a container**: After a long wait, we can start a container by the Command Line: `docker run -it -v "$(pwd)/out:/out" dtff-hw2`;  
+6. A new folder which is called `out/` would be generated in the present folder which contains the figure of the data `coding-environment-exercise.csv` which is named as `docker_test.png` ;
+
+![image text](https://github.com/STICKER1998/Digital_Tools_for_Finance/blob/midterm/Homework/week2/Homework2.2/out/docker_test.png)
 
 
