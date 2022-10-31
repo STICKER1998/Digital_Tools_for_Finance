@@ -34,6 +34,6 @@ The rest is about the FRED API:
 
 3. Construct a query string to retrieve the series of the monthly unemployment rate (seasonally adjusted) since 2020-01. Use the fake API key abc123 in the query string.
 
-   `https://api.stlouisfed.org/fred/series/observations?series_id=UNRATE&frequency=m&realtime_start=2020-01-01&api_key=abc123`
+   https://api.stlouisfed.org/fred/series/observations?series_id=UNRATE&frequency=m&realtime_start=2020-01-01&api_key=abc123
 
 
