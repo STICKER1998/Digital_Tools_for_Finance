@@ -48,7 +48,7 @@ We only show the key step 4 as below:
   fig = plt.figure(dpi=128, figsize=(10, 6))
   plt.plot(x,y, c='red')
   fig.autofmt_xdate()
-  plt.savefig("/out/fig.png") 
+  plt.savefig("/out/docker_test.png") 
   print(x)
 ```
 
