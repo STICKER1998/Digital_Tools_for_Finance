@@ -34,10 +34,33 @@ We only show the key step 4 as below:
 
 ## Solutions 
 1. We first write a python script `docker_test.py` which is in `scr/` and `Homework/week2/Homework2.2` to plot data in `data/coding-environment-exercise.csv`;
+```
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  import numpy as np
+  
+  # Read data
+  csv_data = pd.read_csv('coding-environment-exercise.csv')
+  
+  # Plot and save the figure
+  x = np.array(csv_data)[:,0]
+  y = np.array(csv_data)[:,1]
+  fig = plt.figure(dpi=128, figsize=(10, 6))
+  plt.plot(x,y, c='red')
+  fig.autofmt_xdate()
+  plt.savefig("/out/fig.png") 
+  print(x)
+```
 
 2. Write a `requirements.txt` to give a list of libs which should be installed;
+```
+  numpy==1.23.4
+  Matplotlib==3.4.*
+  pandas==1.5.1
+```
 
 3. Write a `Dockerfile` in order to construct a image in Doceker;
+
 
 4. **Build a container image**: in the terminal, we use the command Line to construct an image (the image is named as "dtff-hw2"): `docker build  --tag dtff-hw2` ;
 
