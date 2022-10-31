@@ -61,6 +61,8 @@ There are some command Lines we used
   echo "$1"
   ./runner.sh hello
 ```
-We can use the cron arrangement, i.e., * * * * * runner.sh
-Each star refers to the Minute, Hour, Day of Month, Month, Day of Week respectively.
-We hope to run the runner.sh every second day at 17:00, only need to use 0 17 */2 instead of the first three stars.
+We can use the cron arrangement, i.e., * * * * * runner.sh;
+
+Each star refers to the Minute, Hour, Day of Month, Month, Day of Week respectively;
+
+We hope to run the runner.sh every second day at 17:00, only need to use 0 17 */2 instead of the first three stars;
