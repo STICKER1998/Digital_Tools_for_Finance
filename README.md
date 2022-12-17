@@ -3,6 +3,17 @@ Final_Project
 
 This is the final Project for DTFF
 
+## Codes and Environments
+--------------------------
+We offered two types codes for this project: Python and Matlab, you can run all of them and the environment setting would be given later.
+
+### 1.Python Codes
+
+### 2.Matlab Codes     
+                        
+
+
+
 Project Organization
 ------------
 
