@@ -2,7 +2,7 @@ import pandas as pd
 def get_subdataset(FILEPATH,dataset, start_dt, end_dt):
 
   DATAPATH=FILEPATH+"\\data\\raw"
-  filename = DATAPATH + "/" + dataset
+  filename = DATAPATH + "\\" + dataset
   data = pd.read_feather(filename)
   start = pd.Timestamp(start_dt)
   end = pd.Timestamp(end_dt)
