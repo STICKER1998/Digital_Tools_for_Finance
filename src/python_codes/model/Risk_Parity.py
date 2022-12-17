@@ -1,26 +1,28 @@
 import numpy as np
-import pandas as pd
-from datetime import datetime, timedelta
 from scipy import optimize, stats
 import math
 from scipy.special import psi
 
-def Read_Data():
-    data = pd.read_excel('Orginal_Closing_Price.xlsx', parse_dates=[0])
-    data = data.values
-    date = data[1:, 0]
-    Price = np.array(data[:, 1:]).T
-    r = (Price[:, 1:] - Price[:, 0:-1]) / Price[:, 0:-1];
-    r = r.astype(float)
-    month_index = [0]
-    for i in range(len(date) - 1):
-        if (date[i].month != date[i + 1].month):
-            month_index.append(i + 1)
-    month_index.append(np.size(r, 1))  # the first day of 2020
-    return r, date, month_index
-
-
 def vech(M, ind):
+    """
+        Realize the switch between a vector/np.array and a symmetric matrix
+
+        Parameters
+        ----------
+        ind: int
+             if ind=1, transfer a vector to a symmetric matrix;
+             if ind=0, transfer a symmetric matrix to a vector;
+
+        M: Lists/np.array (ind=1)
+            List of feature sizes, i.e.,
+                [V[0,0],V[0,1],V[0,2],V[1,1],V[1,2],V[2,2]]
+            np.matrix (ind=0)
+
+        Returns
+        -------
+        V:np.matrix (ind=1)
+        v:np.array (ind=0)
+    """
     if ind == 1:
         n = int((np.sqrt(8 * len(M) + 1) - 1) / 2)
         V = np.zeros([n, n])
@@ -45,6 +47,29 @@ def vech(M, ind):
 
 
 def MMF(x, d, n, w, tol):
+    """
+        Using MMF Method to estimate the parameters of Multivariate-t-distribution
+
+        Parameters
+        ----------
+        x: np.array
+            d * n the sample datas
+        n,d: ind
+            the dimension/number of sample datas
+        w: np.array
+            the weight for MMF
+        tol: float
+            the step tolerance of MMF
+
+        Returns
+        -------
+        nu: np.array
+            the degrees of freedom
+        mu: np.array
+            d * 1 the location paramter
+        sigma: np.matrix
+            d * d the covariance matrix
+    """
     nu = np.array([2])
     mu = np.matrix(np.mean(x, 1)).T
     sigma = np.matrix(np.zeros([d, d]))
@@ -97,6 +122,24 @@ def MMF(x, d, n, w, tol):
 
 
 def Calculate_RC(w, r, method):
+    """
+        Calculate the risk contribution for each assets
+
+        Parameters
+        ----------
+        w: np.array
+            d * 1 the weight of portfolios
+        r: np.array
+            d * n the daily returns of assets
+        method: string
+            "std": model based on std
+            "VaR": model based on VaR
+            "ES": model based on ES
+        Returns
+        -------
+        RC: np.array
+            d * 1 the risk contribution of assets
+    """
     d = len(w)
     w = np.matrix(w)
     RC = []
@@ -130,6 +173,24 @@ def Calculate_RC(w, r, method):
 
 
 def Calculate_Loss(w, r, method):
+    """
+        Calculate the loss function for risk parity model (in order to
+        make the risk contribution of each assets equal)
+
+        Parameters
+        ----------
+        w: np.array
+            d * 1 the weight of portfolios
+        r: np.array
+            d * n the daily returns of assets
+        method: string
+            "std": model based on std
+            "VaR": model based on VaR
+            "ES": model based on ES
+        Returns
+        -------
+        Loss: np.array
+    """
     RC = Calculate_RC(w, r, method)
     Loss = np.array([0])
     for i in range(len(RC) - 1):
@@ -139,6 +200,21 @@ def Calculate_Loss(w, r, method):
 
 
 def Calculate_Weight(r, method):
+    """
+        Calculate the weight of each assets from the model
+        Parameters
+        ----------
+        r: np.array
+            d * n the daily returns of assets
+        method: string
+            "std": model based on std
+            "VaR": model based on VaR
+            "ES": model based on ES
+        Returns
+        -------
+         w: np.array
+            d * 1 the weight of portfolios
+    """
     w0 = np.array([1/3, 1/3, 1/3])
     cons = ({'type': 'eq', 'fun': lambda w: w[0] + w[1] + w[2] - 1})
     w = optimize.minimize(Calculate_Loss, w0, args=(r, method), method='SLSQP', tol=1e-20, constraints=cons,
@@ -147,14 +223,44 @@ def Calculate_Weight(r, method):
 
 
 def Calculate_Net_Value(r):
+    """
+        Calculate the Net Value of portfolios/assets
+        Parameters
+        ----------
+        r: np.array
+            d * n the daily returns of assets
+        Returns
+        -------
+         values: np.array
+            d * n the net value of portfolios/assets
+        """
     T = len(r)
     values = np.ones([T + 1, 1])
     for i in range(1, T + 1):
         values[i] = values[i - 1] * (1 + r[i - 1])
     return values
 
-
 def Risk_Parity_Model(r, method, month_index):
+    """
+        Calculate the weight of each assets from the model
+        Parameters
+        ----------
+        r: np.array
+            d * n the daily returns of assets
+        method: string
+            "std": model based on std
+            "VaR": model based on VaR
+            "ES": model based on ES
+        month_index:np.array
+            19 * 1 store the index for changing the weight of each assets
+
+        Returns
+        -------
+         values: np.array
+            d * n the net value of portfolios/assets
+         w_adjust: np.array
+            d * n the weight of each assets for everyday
+    """
     frequent = 19
     w = np.ones([3, frequent])
     for i in range(frequent):
@@ -167,44 +273,13 @@ def Risk_Parity_Model(r, method, month_index):
     for i in range(frequent):
         for j in range(month_index[3 + i * 3] - month_index[3], month_index[3 + (i + 1) * 3] - month_index[3]):
             w_adjust[:, j] = w[:, i]
-
-    rp = np.zeros([3, month_index[-1] - month_index[3]])
     rp = sum(w_adjust * r[:, month_index[3]:month_index[-1]], 0)
     values = Calculate_Net_Value(rp)
-    return w_adjust, values,w
+    return w_adjust, values
 
-def Write_Data(w_std,w_VaR,w_ES,values_std,values_VaR,values_ES,date,month_index):
-    data1 = {"value_std": values_std.T[0], "value_VaR": values_VaR.T[0], "value_ES": values_ES.T[0]}
-    data1 = pd.DataFrame(data1)
-    data1.to_excel("/out/Net_Value.xlsx")
 
-    data2 = {"w_std_stock": w_std[0, :], "w_std_bond": w_std[1, :], "w_std_gold": w_std[2, :]}
-    data2 = pd.DataFrame(data2)
-    data2.to_excel("/out/Weight_std.xlsx")
 
-    data3 = {"w_std_stock": w_VaR[0, :], "w_std_bond": w_VaR[1, :], "w_std_gold": w_VaR[2, :]}
-    data3 = pd.DataFrame(data3)
-    data3.to_excel("/out/Weight_VaR.xlsx")
 
-    data4 = {"w_std_stock": w_ES[0, :], "w_std_bond": w_ES[1, :], "w_std_gold": w_ES[2, :]}
-    data4 = pd.DataFrame(data4)
-    data4.to_excel("/out/Weight_ES.xlsx")
-
-    data5 = {"Time": date[month_index[3] - 1:]}
-    data5 = pd.DataFrame(data5)
-    data5.to_excel("/out/Time.xlsx")
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    [r, date, month_index] = Read_Data()
-    print("Model based on std Start:")
-    [w_std, values_std,w1] = Risk_Parity_Model(r, 'std', month_index)
-    print("Model based on VaR Start:")
-    [w_VaR,values_VaR,w2]=Risk_Parity_Model(r,'VaR',month_index)
-    print("Model based on ES Start:")
-    [w_ES,values_ES,w3]=Risk_Parity_Model(r,'ES',month_index)
-    Write_Data(w_std, w_VaR, w_ES, values_std, values_VaR, values_ES, date, month_index)
-    print("All Finished!")
 
 
 
