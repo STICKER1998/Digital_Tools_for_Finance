@@ -11,8 +11,8 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectInput(inputId = "type",
-                  label = "Choose a type:",
-                  choices = c("Daily Return", "Model result")),
+                  label = "Choose Outputs:",
+                  choices = c("Daily Return", "Model results")),
       
       sliderInput("start",
                   "Start Date:",
@@ -25,24 +25,14 @@ ui <- fluidPage(
                   min = as.Date("2015-01-06","%Y-%m-%d"),
                   max = as.Date("2019-12-31","%Y-%m-%d"),
                   value=as.Date("2019-12-31"),timeFormat="%Y-%m-%d"),
-
     ),
     
     mainPanel(
-      fluidRow(
-        column(6, 
-               plotOutput(outputId = "Plot1")
-        ),
-        column(6, 
-               plotOutput(outputId = "Plot2")
-        )),
-      fluidRow(
-        column(6, 
-               plotOutput(outputId = "Plot3")
-        ),
-        column(6, 
-               plotOutput(outputId = "Plot4")
-        ))
+      fluidRow(column(6, plotOutput(outputId = "Plot1")),
+        column(6, plotOutput(outputId = "Plot2"))),
+      
+      fluidRow(column(6, plotOutput(outputId = "Plot3") ),
+        column(6, plotOutput(outputId = "Plot4")))
     )
   ))
 
