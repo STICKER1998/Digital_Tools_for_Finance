@@ -6,11 +6,12 @@ This is the final Project for DTFF
 ## Codes and Environments
 --------------------------
 We offered two types codes for this project: Python and Matlab, you can run all of them and the environment setting would be given later.
-
 ### 1.Python Codes
+We use the python code to implement the risk parity model in our report, while it would only give you the results of the model which include
+the weights of assets and the net value of portfolio, all of figures in the report are drawn by MATLAB code.
 
 ### 2.Matlab Codes     
-                        
+   We use the matlab codes to implement the same model as Python code, but all of the figures are                      
 
 
 
