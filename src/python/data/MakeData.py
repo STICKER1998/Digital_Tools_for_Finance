@@ -34,19 +34,19 @@ def Write_Data(FILEPATH,w_std,w_VaR,w_ES,values_std,values_VaR,values_ES,date,mo
     data1 = {"Time": date[month_index[3] - 1:], "value_std": values_std.T[0], "value_VaR": values_VaR.T[0],
              "value_ES": values_ES.T[0]}
     data1 = pd.DataFrame(data1)
-    data1.to_excel(FILEPATH + "\\data\\result\\Values.xlsx")
+    data1.to_excel(FILEPATH + "\\data\\result\\python\\Values.xlsx")
 
     data2 = {"Time": date[month_index[3]:], "w_std_stock": w_std[0, :], "w_VaR_stock": w_VaR[0, :],
              "w_ES_stock": w_ES[0, :]}
     data2 = pd.DataFrame(data2)
-    data2.to_excel(FILEPATH + "\\data\\result\\weight_stock.xlsx")
+    data2.to_excel(FILEPATH + "\\data\\result\\python\\weight_stock.xlsx")
 
     data3 = {"Time": date[month_index[3]:], "w_std_stock": w_std[0, :], "w_VaR_stock": w_VaR[0, :],
              "w_ES_stock": w_ES[0, :]}
     data3 = pd.DataFrame(data3)
-    data3.to_excel(FILEPATH + "\\data\\result\\weight_bond.xlsx")
+    data3.to_excel(FILEPATH + "\\data\\result\\python\\weight_bond.xlsx")
 
     data4 = {"Time": date[month_index[3]:], "w_std_stock": w_std[0, :], "w_VaR_stock": w_VaR[0, :],
              "w_ES_stock": w_ES[0, :]}
     data4 = pd.DataFrame(data4)
-    data4.to_excel(FILEPATH + "\\data\\result\\weight_gold.xlsx")
+    data4.to_excel(FILEPATH + "\\data\\result\\python\\weight_gold.xlsx")
