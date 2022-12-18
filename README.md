@@ -16,7 +16,7 @@ Database Present
     │          └── python    (in)  <--- The final data given by python codes
 ---------------
 
-### 
+### Remarks
 1. The folder `data` have two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
 2. In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
 3. For the user who wants to run the `python` code in `docker`, we set a independent database in the folder `docker\python` because we don't want to copy the `\data` folder in the root directory to docker container.
@@ -27,10 +27,10 @@ In order to avoid using absolute addresses, we define a path variable `FILEPATH`
 2. `matlab`: we used `cd(..)` and `CURRENT_PATH=pwd` to solve it;
 3. `r`: we used `..\` when reading the datas;
 
-However, if you indeed want to change the path of root directory, what you need to do can be listed as
-
-1. `MATLAB` codes: you only need to change the `FILEPATH` in the `main_function.m`;
-2. `r` codes: you only need to change the `FILEPATH` in the `app.r`;
+However, if you indeed want to **change the path of root directory**, what you need to do can be listed as
+1. `Python` codes: you only need to change the `FILEPATH` in the `main.py`;
+2. `MATLAB` codes: you only need to change the `FILEPATH` in the `main_function.m`;
+3. `r` codes: you only need to change the `FILEPATH` in the `app.r`;
 
 The example of  `FILEPATH` is:
 ```
