@@ -10,7 +10,7 @@ Data Store
     │   ├── result      
     │          ├── matlab      <- The final data given by matlab codes
     │          └── python            <- The final data given by python codes
-
+---------------
 The folder `data` have two folders `raw` and `result`
 
 ## Codes and Environments
@@ -74,26 +74,19 @@ All of the python codes are given in the folder `src\python`, you can run it in 
     │   │
     │   ├── python
     |   |   └── __init__.py    <- Makes src a Python module
-    |   |   |            
+    |   |   |  
+    |   |   ├── main.py <- The main function to run all the codes
+    |   |   |
     |   |   ├── data <- Scripts to download or generate data
-    │   |   |   └── make_dataset.py
+    │   |   |   └── MakeData.py
+    |   |   |   ├── 
+    |   |   |
     |   |   ├── model
-    |   |       └── build_features.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+    |           └── Risk_Parity.py
+    │ 
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
