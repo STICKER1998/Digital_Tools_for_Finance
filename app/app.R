@@ -15,8 +15,8 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectInput(inputId = "type",
-                  label = "Choose a type:",
-                  choices = c("Daily Return", "Model result")),
+                  label = "Choose the Output:",
+                  choices = c("Daily Return", "Model results")),
       
       sliderInput("start",
                   "Start Date:",
