@@ -1,9 +1,9 @@
 import os
 import sys
 FILEPATH=os.path.abspath(os.path.join(os.getcwd(), "../.."))
-sys.path.append(FILEPATH+"\src\python_codes\data")
+sys.path.append(FILEPATH+"\src\python\data")
 from MakeData import Read_Data,Write_Data
-sys.path.append(FILEPATH+"\src\python_codes\model")
+sys.path.append(FILEPATH+"\src\python\model")
 from Risk_Parity import Risk_Parity_Model
 
 # Press the green button in the gutter to run the script.
