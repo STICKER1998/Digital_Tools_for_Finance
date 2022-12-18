@@ -58,7 +58,7 @@ We use the method of quarterly rebalancing for backtesting. There are 1, 2, ...,
     \item \textbf{Rolling backtest.} Calculate the indicators used to evaluate the performance of the models.
 \end{enumerate}
 
-\subsection{Result analysis}
+\subsection{Result Analysis}
 \subsubsection{Evaluation Index}
 \begin{table}[H]
     \centering
@@ -108,13 +108,13 @@ We use the method of quarterly rebalancing for backtesting. There are 1, 2, ...,
 \end{figure}
 
 \subsubsection{Analysis and Evaluation}
-\paragraph{Allocation Models all outperform Individual Assets}\mbox{}\\
+\paragraph{Allocation Models All Outperform Individual Assets}\mbox{}\\
 From the various evaluation indicators in \textbf{Table \ref{Tab3}}, we can find that the three allocation models have the following characteristics: (1) The annualized rate of return is higher than that of CSI 300 and CSI ABI, and lower than gold ETF; (2) The annualized volatility is much lower than that of CSI 300 and gold ETF, while it is slightly higher than that of CSI ABI. The maximum drawdown rate is lower than that of all individual assets; (3) Sharpe ratio is significant higher than that of a single asset.
 This shows that through the asset allocation, financial risks have been dispersed adequately, and the overall performance of the asset portfolio is significantly better than that of a single asset.
 
-\paragraph{Different models have their own characteristics}\mbox{}\\
+\paragraph{Different Models Have Their Own Characteristics}\mbox{}\\
 Compared with the standard deviation models, the performance of the VaR model and the ES model is basically the same, both have higher annual returns, lower volatility and maximum drawdown than the standard deviation model. With respect to the Sharpe ratio, the standard deviation model is the lowest and the expected shortfall model is the highest. This is because the standard deviation indicator treats downside risk and upside risk equally. In other words, the standard deviation model overestimates the risk level of financial assets during the rising period, so that it could miss the investment opportunities when the "bull market" comes. 
 
 
-\paragraph{Weight allocation with more debt and less shares}\mbox{}\\
+\paragraph{Weight Allocation with More Debt and Less Shares}\mbox{}\\
 According to the average weights of the three models allocated on various assets during the backtest period shown in \textbf{Table \ref{Tab4}}, it can be seen that the average allocation ratio of the VaR model is the lowest in the CSI 300 Index and the gold ETF, and the highest in the CSI ASI. The expected shortfall model is more sensitive to the changes of the upward and downward trend, so the allocation weight of stocks and gold ETF are slightly higher than VaR model. Finally, we also found that among three models, all of them have shown a significant feature of asset allocation ratio having more bonds than stocks, which is consistent with the fluctuation characteristics of assets.
