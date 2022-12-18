@@ -1,2 +1,2 @@
 *.yml linguist-language=Python
-*.m linguist-language=Matlab
+*.m linguist-language=MATLAB
