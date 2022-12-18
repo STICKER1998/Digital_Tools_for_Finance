@@ -1,4 +1,6 @@
 function [VaR,ES] = Calculate_VaRES_MVT(w,r,alpha)
+% Calculate the VaR and ES based on normal distribution using Monte Carlo
+% Method
 d = length(w);
 T = size(r,2);
 MMF_weight = ones(T,1)/T;

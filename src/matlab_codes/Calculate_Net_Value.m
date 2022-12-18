@@ -1,4 +1,5 @@
 function value = Calculate_Net_Value(r)
+% Calculate the net value of models
 T=length(r);
 value=ones(1,T+1);
 for i=2:T+1

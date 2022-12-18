@@ -1,4 +1,6 @@
 function [VaR,ES] = Calculate_VaRES_NORM(w,r,alpha)
+% Calculate the VaR and ES based on MVT using Monte Carlo
+% Method
 d = length(w);
 T = size(r,2);
 rep = 2000;

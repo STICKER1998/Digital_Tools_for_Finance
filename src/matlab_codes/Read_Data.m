@@ -1,6 +1,6 @@
-function [r,date,month_index]= Read_Data()
+function [r,date,month_index]= Read_Data(FILEPATH)
 % Read the Closing Price and Calculate the day return 
-[Price,char]= xlsread("Orginal_Closing_Price.xlsx");
+[Price,char]= xlsread(FILEPATH+"\data\raw\Orginal_Closing_Price.xlsx");
 Price=Price';
 r=(Price(:,2:end)-Price(:,1:end-1))./Price(:,1:end-1);
 

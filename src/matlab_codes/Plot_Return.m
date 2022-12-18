@@ -26,8 +26,9 @@ ylabel('Gold ETF','fontsize',10,'fontname','Times New Roman');
 set(gca,'XTick', [month_index(1),month_index(13),month_index(25),month_index(37),month_index(49),month_index(61)])   
 set(gca,'XTickLabel',{'2015','2016','2017','2018','2019','2020'});  
 
-% Plot the Corrlation Matrix of their returns
+% Plot the Correlation Matrix for the return of three assets
 subplot(2,2,4);
 label={'Stock','Bond','Gold'};
 h=heatmap(label,label,corr(r'));
+title("Correlation Matrix");
 end

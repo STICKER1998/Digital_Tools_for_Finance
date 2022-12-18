@@ -1,11 +1,13 @@
 function [] = Plot_Pdf(r)  
+% Plot the p.d.f of assets
 T=size(r,2);
 w=ones(T,1)/T;
 tol=1e-30;
-
-Name ={'Stock','Bond','Gold'};
+figure(3);
+t = tiledlayout('flow','TileSpacing','compact');
+Name ={'CSI-300','CSI-ABI','Gold-ETF'};
 for i=1:3
-    figure(i);
+    nexttile
     xmin = min(r(i,:));
     xmax = max(r(i,:));
     x=linspace(xmin,xmax,100);
@@ -25,9 +27,10 @@ for i=1:3
     hold on;
     title(Name(i),'fontsize',10,'fontname','Times New Roman');           
     xlabel('x','fontsize',10,'fontname','Times New Roman');    
-    ylabel('pdf','fontsize',10,'fontname','Times New Roman');           
-    h = legend([F1,F2,F3],'Sample p.d.f','Estimated p.d.f','Norm p.d.f','fontname','Times New Roman');      
-    set(h,'fontsize',12,'color','w','edgecolor','k','textcolor','k');   
+    ylabel('p.d.f','fontsize',10,'fontname','Times New Roman');           
 end
+h = legend([F1,F2,F3],'Sample p.d.f','Estimated p.d.f(MVT)','Estimated p.d.f(Normal)','fontname','Times New Roman');   
+set(h,'Location','northwest','fontsize',12,'color','w','edgecolor','k','textcolor','k');   
+h.Layout.Tile = 4;
 end  
 

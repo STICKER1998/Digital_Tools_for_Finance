@@ -1,4 +1,5 @@
 function Loss = Calculate_Loss(r,w,type)
+% Calculate the looss function
 RC = Calculate_RC(r,w,type);
 Loss = 0;
 for i=1:length(RC)-1

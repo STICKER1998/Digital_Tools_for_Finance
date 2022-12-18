@@ -12,7 +12,7 @@ function param = M1_MMF(x,d,n,w,tol)
 % real_tol: The estimation error of each axis element
 
 % Initialize the parameters
-nu=2;
+nu=5;
 mu=mean(x,2);
 sigma=zeros(d,d);
 for i=1:n
@@ -40,7 +40,7 @@ while ~done
     end
 
     phi = @(y) psi(y)-log(y);
-    F = @(y) abs(phi(y/2)-phi((y+d)/2)+sum(w.*((nu0+d)./(nu0+delta)-log((nu0+d)./(nu0+delta))-1)));
+    F = @(y) abs(phi(y/2)-phi((y+d)/2)+sum(w'*((nu0+d)./(nu0+delta)-log((nu0+d)./(nu0+delta))-1)));
     % We can use fmincon or fzero to solve it
     A=[];b=[];
     lb=1;
