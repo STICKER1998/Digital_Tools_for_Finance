@@ -3,8 +3,32 @@ Final_Project
 
 This is the final Project for DTFF
 
-## FILEPATH
-In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project, you need to change it when using `MATLAB` codes in `\src` and `R` codes in `\app`. 
+## 
+
+## Database 
+Database Present
+---------------
+---------------
+    ├── data
+    │   ├── raw     (out)  ---> python and matlab codes would read data from this folder, the data we offered in .feather and \.xlsx form.
+    │   ├── result  (out)  ---> This datas would be used in Rshiny
+    │          ├── matlab    (in)  <--- The final data given by matlab codes  
+    │          └── python    (in)  <--- The final data given by python codes
+---------------
+
+### 
+1. The folder `data` have two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
+2. In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
+3. For the user who wants to run the `python` code in `docker`, we set a independent database in the folder `docker\python` because we don't want to copy the `\data` folder in the root directory to docker container.
+
+### FILEPATH
+In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project. However, you **don't need** to change it when using any codes in `\scr` and `\app` folders since 
+1. `python`: we used `os` library to solve it;
+2. `matlab`: we used `cd(..)` and `CURRENT_PATH=pwd` to solve it;
+3. `r`: we used `..\` when reading the datas;
+
+However, if you indeed want to change the path of root directory, what you need to do can be listed as
+
 1. `MATLAB` codes: you only need to change the `FILEPATH` in the `main_function.m`;
 2. `r` codes: you only need to change the `FILEPATH` in the `app.r`;
 
@@ -13,17 +37,6 @@ The example of  `FILEPATH` is:
 FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
 ```
 Note: You don't need to change the `FILEPATH` in the python codes unless you can't run the `main.py` directly due to the path error, since we have used `os` to find the absolute path of your root directory automatically.
-
-Database Present
----------------
-    ├── data
-    │   ├── raw     (out)  ---> python and matlab codes would read data from this folder, the data we offered in .feather and \.xlsx form.
-    │   ├── result  (out)  ---> This datas would be used in Rshiny
-    │          ├── matlab    (in)  <--- The final data given by matlab codes  
-    │          └── python    (in)  <--- The final data given by python codes
----------------
-The folder `data` have two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
-In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
 
 
 ## Codes and Environments
