@@ -56,10 +56,10 @@ server <- function(input, output) {
   df <- read_excel(paste0(DATAPATH,"raw/r_data.xlsx"))
   df$Year <- as.Date(df$Year)
   
-  df_ws <- read_excel(paste0(DATAPATH,"result/weight_stock.xlsx"))
-  df_wb <- read_excel(paste0(DATAPATH,"result/weight_bond.xlsx"))
-  df_wg <- read_excel(paste0(DATAPATH,"result/weight_gold.xlsx"))
-  df_nv <- read_excel(paste0(DATAPATH,"result/Net_values.xlsx"))
+  df_ws <- read_excel(paste0(DATAPATH,"result/matlab/weight_stock.xlsx"))
+  df_wb <- read_excel(paste0(DATAPATH,"result/matlab/weight_bond.xlsx"))
+  df_wg <- read_excel(paste0(DATAPATH,"result/matlab/weight_gold.xlsx"))
+  df_nv <- read_excel(paste0(DATAPATH,"result/matlab/values.xlsx"))
 
   df_ws$Time <- as.Date(df_ws$Time)
   df_wb$Time <- as.Date(df_wb$Time)
