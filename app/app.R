@@ -2,7 +2,6 @@ library(readxl)
 library(shiny)
 library(ggplot2)
 library(ggcorrplot)
-library(reshape2)
 
 ui <- fluidPage(
   
@@ -11,8 +10,8 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectInput(inputId = "type",
-                  label = "Choose Outputs:",
-                  choices = c("Daily Return", "Model results")),
+                  label = "Choose a type:",
+                  choices = c("Daily Return", "Model result")),
       
       sliderInput("start",
                   "Start Date:",
@@ -25,27 +24,37 @@ ui <- fluidPage(
                   min = as.Date("2015-01-06","%Y-%m-%d"),
                   max = as.Date("2019-12-31","%Y-%m-%d"),
                   value=as.Date("2019-12-31"),timeFormat="%Y-%m-%d"),
+
     ),
     
     mainPanel(
-      fluidRow(column(6, plotOutput(outputId = "Plot1")),
-        column(6, plotOutput(outputId = "Plot2"))),
-      
-      fluidRow(column(6, plotOutput(outputId = "Plot3") ),
-        column(6, plotOutput(outputId = "Plot4")))
+      fluidRow(
+        column(6, 
+               plotOutput(outputId = "StockPlot")
+        ),
+        column(6, 
+               plotOutput(outputId = "BondPlot")
+        )),
+      fluidRow(
+        column(6, 
+               plotOutput(outputId = "GoldPlot")
+        ),
+        column(6, 
+               plotOutput(outputId = "CorPlot")
+        ))
     )
   ))
 
 
 server <- function(input, output) {
-  DATAPATH = "../data/"
-  df <- read_excel(paste0(DATAPATH,"r_data.xlsx"))
+
+  df <- read_excel("r_data.xlsx")
   df$Year <- as.Date(df$Year)
 
-  df_ws <- read_excel(paste0(DATAPATH,"weight_stock.xlsx"))
-  df_wb <- read_excel(paste0(DATAPATH,"weight_bond.xlsx"))
-  df_wg <- read_excel(paste0(DATAPATH,"weight_gold.xlsx"))
-  df_nv <- read_excel(paste0(DATAPATH,"Net_values.xlsx"))
+  df_ws <- read_excel("weight_stock.xlsx")
+  df_wb <- read_excel("weight_bond.xlsx")
+  df_wg <- read_excel("weight_gold.xlsx")
+  df_nv <- read_excel("Net_values.xlsx")
   df_ws$Time <- as.Date(df_ws$Time)
   df_wb$Time <- as.Date(df_wb$Time)
   df_wg$Time <- as.Date(df_wg$Time)
@@ -87,7 +96,7 @@ server <- function(input, output) {
   
   typeInput <- reactive({input$type})
   
-  output$Plot1 <- renderPlot({
+  output$StockPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
   ggplot(data = dataInput(), 
          aes(x = Year, y = Stock)) + 
@@ -112,7 +121,7 @@ server <- function(input, output) {
     }
   })
   
-  output$Plot2 <- renderPlot({
+  output$BondPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
     ggplot(data = dataInput(), 
            aes(x = Year, y = Bond)) + 
@@ -137,7 +146,7 @@ server <- function(input, output) {
     }
   })
   
-  output$Plot3 <- renderPlot({
+  output$GoldPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
     ggplot(data = dataInput(), 
            aes(x = Year, y = Gold)) +
@@ -162,9 +171,9 @@ server <- function(input, output) {
     }
   })
   
-  output$Plot4 <- renderPlot({
+  output$CorPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
-    df <- read_excel(paste0(DATAPATH,"r_data.xlsx"))
+    df <- read_excel("r_data.xlsx")
     df$Year <- as.Date(df$Year)
     start = input$start
     end = input$end
