@@ -14,7 +14,7 @@ and all of figures in the report are drawn by MATLAB code.
 
 All of the python codes are given in the folder `src\python`, you can run it in the ways
 1. Your own IDE and install all the packages in the file `requirements.txt`.
-2. We also give you the environment export `DTFF-Final-Project.yml`, you can run it in `vscode` under `conda` environment.
+2. We also give you the environment export [`DTFF-Final-Project.yml`](./src/python/DTFF-Final-Project.yml), you can run it in `vscode` under `conda` environment.
 3. Run it in `docker`. If you want to do this, please see the folder `docker\python`, what you need to do is
    1) Go in the folder `docker\python` using command Lines;
    2) Open the docker and run the command line:
