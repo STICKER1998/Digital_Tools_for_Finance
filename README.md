@@ -55,7 +55,7 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    
    All of results would be exported to the folder `data\result\matlab` directly and all of the figures would be shown on your computer at the same time.
  
-
+   **Note**: if you run the codes at first time, please write the function `parpool(n)` in the `main_function.m` to set your parallel computing numbers, n must be smaller than the kernels of your computer. 
 
 ## Report and Slides
 
