@@ -32,7 +32,13 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    
    All of results would be exported to the folder `data\result\matlab` directly and all of the figures would be shown on your computer at the same time.
 
-
+## Data Store
+The folder `data` have two folders `raw' and `result`
+    ├── data
+    │   ├── raw       <- python and matlab codes would read data from this folder, the data we offered in `.feather` and `.xlsx` form.
+    │   ├── result      
+    │          ├── matlab      <- The final data given by matlab codes
+    │          └── python            <- The final data given by python codes
 
 Project Organization
 ------------
