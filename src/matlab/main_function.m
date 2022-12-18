@@ -1,11 +1,17 @@
-% read data
-FILEPATH = "C:\Users\TANGZIFENG\Desktop\Digital_Tools_for_Finance";
+% Path Setting
+FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
+addpath(FILEPATH+'\src\matlab\data');
+addpath(FILEPATH+'\src\matlab\model');
+addpath(FILEPATH+'\src\matlab\features');
+addpath(FILEPATH+'\src\matlab\visualization');
+
+% % read data
 [r,date,month_index] = Read_Data(FILEPATH);
 
-% Plot the figure of assets'return: figure1
-Plot_Return(r,month_index);
-
-% Calculate the statistics of r
+% % Plot the figure of assets'return: figure1
+ Plot_Return(r,month_index);
+% 
+% % Calculate the statistics of r
 [Stat_Stock,Name]=Calculate_Statistics(r(1,:));
 Stat_Bond=Calculate_Statistics(r(2,:));
 Stat_Gold=Calculate_Statistics(r(3,:));
