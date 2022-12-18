@@ -1,9 +1,16 @@
+# Junk Files for R codes
+*.RData
+*.Rhistory
+
+# Junk File for Matlab codes
+*.asv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 
-# C extensions
-*.so
+# Pycharm
+.idea/
 
 # Distribution / packaging
 .Python
@@ -80,10 +87,6 @@ target/
 
 # Mac OS-specific storage files
 .DS_Store
-
-# vim
-*.swp
-*.swo
 
 # Mypy cache
 .mypy_cache/
