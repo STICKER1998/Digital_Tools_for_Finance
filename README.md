@@ -3,13 +3,17 @@ Final_Project
 
 This is the final Project for DTFF
 
-## PATHFILE
-In order to avoid using absolute addresses, we define a path variable `PATHFILE` to denote the Root directory for this project, you need to change it when using `MATLAB` codes in `\src` and `R` codes in `\app`. 
-    1.`MATLAB` codes: you only need to change the `PATHFILE` in the `main_function.m`;
-    2.`r` codes: you only need to change the `PATHFILE` in the `app.r`;
-The example of  `PATHFILE` is:
+## FILEPATH
+In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project, you need to change it when using `MATLAB` codes in `\src` and `R` codes in `\app`. 
+1. `MATLAB` codes: you only need to change the `FILEPATH` in the `main_function.m`;
+2. `r` codes: you only need to change the `FILEPATH` in the `app.r`;
+
+The example of  `FILEPATH` is:
 ```
+FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
 ```
+Note: You don't need to change the `FILEPATH` in the python codes unless you can't run the `main.py` directly due to the path error, since we have used `os` to find the absolute path of your root directory automatically.
+
 Data Store
 ---------------
     ├── data
