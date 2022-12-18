@@ -58,6 +58,8 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    **Note**: if you run the codes at first time, please write the function `parpool(n)` in the `main_function.m` to set your parallel computing numbers, n must be smaller than the kernels of your computer. 
 
 ## Report and Slides
+The report of our final assignment is called `DTFF_report_final.pdf` and the LaTeX-interpretable code and the used figures are included in the folder `reports`. 
+The slide of our final assignment is called `DTFF_Presentation.pdf` and the LaTeX-interpretable code and the used figures are included in the folder `slides`. 
 
 ## Interactive App Based on R Shiny
 We create an interactive app using R shiny called `app.R` to show the plots of the daily return, the assets correlation coeffient, weights, and the net values in general cases. Specifically, we can determine `Output` to show the different kinds of plots and choose `Start Date` and `End Date` to determine the date interval.
