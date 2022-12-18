@@ -81,7 +81,7 @@ Assume the return $r=(r_1,r_2,r_3)^T \sim t_{\nu}(\mu,\Sigma)$ is a 3-variate t-
 where $t \sim t_{\nu}(0,1)$ and $f_{\nu}(x),\:F_{\nu}(x)$ are the p.d.f and c.d.f of t respectively.
 
 \subsubsection{Monte Carlo Simulation}
-Combined with the method in \textbf{3.2}, we can compare the estimation effect of risk measurement indicators based on MVT and normal distribution through the Monte Carlo Simulation. We construct a portfolio with weight $w=[1/3,1/3,1/3]$ and calculated the Expected Shortfall and Value at Risk based on real data, estimated normal distribution and estimated MVT respectively. The error rate of estimation and box plot of the errors are given as follow
+Combined with the method in \textbf{2.2}, we can compare the estimation effect of risk measurement indicators based on MVT and normal distribution through the Monte Carlo Simulation. We construct a portfolio with weight $w=(1/3,1/3,1/3)$ and calculated the Expected Shortfall and Value at Risk based on real data at first. Next, we randomly generate 2000 samples of the same length from the real data (placing-back extraction) and estimate VaR and ES based on normal distribution and MVT respectively using MMF Method and \textbf{Equation (\ref{E2.3})}. The error rate of estimation and box plot of the errors are given as follow
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|}
@@ -105,7 +105,7 @@ Combined with the method in \textbf{3.2}, we can compare the estimation effect o
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{Figure/FIG4-MC.png}
-    \caption{The Estimate Error of VaR and ES based on MVT and Normal Distribution}
+    \caption{The Estimate Error of VaR and ES based on MVT and Normal Distribution using Monte Carlo Method (repeat 2000 times)}
     \label{Fig4}
 \end{figure}
 From \textbf{Figure \ref{Fig4}}, we can conclude that the errors of VaR and ES estimated based on MVT are smaller than those based on Normal.
