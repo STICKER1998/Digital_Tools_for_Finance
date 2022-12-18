@@ -49,9 +49,12 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    
 
 ### 2.Matlab Codes     
-   We use the matlab codes to implement the same model as Python code and draw all of the figures in reports. In order to run the code, you only need to open the `main_function.m` in matlab -> install the toolbox `Optimization Toolbox`-> Run `main_function.m` .
+   We use the matlab codes to implement the same model as Python code and draw all of the figures in reports. In order to run the code, you only need to do
+   
+   open the `main_function.m` in matlab -> install the toolbox `Optimization Toolbox` and `Parallel Computing Toolbox`-> Run `main_function.m` .
    
    All of results would be exported to the folder `data\result\matlab` directly and all of the figures would be shown on your computer at the same time.
+ 
 
 
 ## Report and Slides
