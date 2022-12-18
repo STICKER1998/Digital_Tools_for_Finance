@@ -5,10 +5,26 @@ This is the final Project for DTFF
 
 ## Codes and Environments
 --------------------------
-We offered two types codes for this project: Python and Matlab, you can run all of them and the environment setting would be given later.
+We offer two types of codes for this project: `Python` and `Matlab`, you can run all of them using your IDE and the environment setting would be given later. For `Python` code, we also offer a way to run it in `docker`, while we only offer a simple dockerfile for matlab code since you need to update some toolboxes by yourself.
 ### 1.Python Codes
-We use the python code to implement the risk parity model in our report, while it would only give you the results of the model which include
-the weights of assets and the net value of portfolio, all of figures in the report are drawn by MATLAB code.
+We use the python code to implement the risk parity model in our report, while it would only give you the results of the model which include:
+1. The weights of assets; (.xlsx)
+2. The net value of portfolio; (.xlsx)
+and all of figures in the report are drawn by MATLAB code.
+
+All of the python codes are given in the folder `src\python`, you can run it in the ways
+1. Your own IDE and install all the packages in the file `requirements.txt`.
+2. We also give you the environment export `DTFF-Final-Project.yml`, you can run it in `vscode` under `conda` environment.
+3. Run it in `docker`. If you want to do this, please see the folder `docker\python`, what you need to do is
+   1) Go in the folder `docker\python` using command Lines;
+   2) Open the docker and run the command line:
+   ```
+   ```
+   and 
+   ```
+   ```
+   3) Then you would see all of the results are shown in the folder `docker\python\data\result`.
+   
 
 ### 2.Matlab Codes     
    We use the matlab codes to implement the same model as Python code, but all of the figures are                      
