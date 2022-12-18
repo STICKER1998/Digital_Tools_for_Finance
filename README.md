@@ -4,7 +4,6 @@ Final_Project
 This is the final Project for DTFF
 
 ## Codes and Environments
---------------------------
 We offer two types of codes for this project: `Python` and `Matlab`, you can run all of them using your IDE and the environment setting would be given later. For `Python` code, we also offer a way to run it in `docker`, while we only offer a simple dockerfile for matlab code since you need to update some toolboxes by yourself.
 ### 1.Python Codes
 We use the python code to implement the risk parity model in our report, while it would only give you the results of the model which include:
@@ -29,7 +28,9 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    
 
 ### 2.Matlab Codes     
-   We use the matlab codes to implement the same model as Python code, but all of the figures are                      
+   We use the matlab codes to implement the same model as Python code and draw all of the figures in reports. In order to run the code, you only need to open the `main_function.m` in matlab -> install the toolbox `Optimization Toolbox`-> Run `main_function.m` .
+   
+   All of results would be exported to the folder `data\result\matlab` directly and all of the figures would be shown on your computer at the same time.
 
 
 
