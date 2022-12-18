@@ -69,7 +69,15 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    All of results would be exported to the folder `data\result\matlab` directly and all of the figures would be shown on your computer at the same time.
  
    **Note**: if you run the codes at first time, please write the function `parpool(n)` in the `main_function.m` to set your parallel computing numbers, n must be smaller than the kernels of your computer. 
-
+   
+### 3.Important Hints
+    Since we used parallel computing in `Matlab` codes, so it would be much faster than the `python` codes, it is normal that the python code takes a very long time to run. Therefore, we would give you a flag to show that the code runs normally such as
+    ```
+    The model based on Std Start:
+    Processes: 5%
+    ...
+    ```
+    
 ## Report and Slides
 The report of our final assignment is called `DTFF_report_final.pdf` and the LaTeX-interpretable code and the used figures are included in the folder `reports`. 
 
