@@ -1,5 +1,5 @@
 % read data
-FILEPATH = "C:\Users\TANGZIFENG\Desktop\dtff-final";
+FILEPATH = "C:\Users\TANGZIFENG\Desktop\Digital_Tools_for_Finance";
 [r,date,month_index] = Read_Data(FILEPATH);
 
 % Plot the figure of assets'return: figure1
