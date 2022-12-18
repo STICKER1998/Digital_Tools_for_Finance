@@ -290,7 +290,10 @@ def Risk_Parity_Model(r, method, month_index):
     w = np.ones([3, frequent])
     for i in range(frequent):
         print("Process:",int((i+1)*100/19),"%")
-        temp = Calculate_Weight(r[:, month_index[i * 3]:month_index[(i + 1) * 3]], method)
+        if i == 0:
+            temp = Calculate_Weight(r[:, month_index[i * 3]:month_index[(i + 1) * 3]], method)
+        else:
+            temp = Calculate_Weight(r[:, month_index[(i - 1) * 3]:month_index[(i + 1) * 3]], method)
         for j in range(3):
             w[j, i] = temp[j]
 
