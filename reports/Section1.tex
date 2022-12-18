@@ -1,0 +1,52 @@
+\section{Introduction}
+\subsection{Risk Measures}
+\subsubsection{Standard Deviation, Semi Variance, Lower Partial Moment Index}
+Standard deviation is the most commonly used risk measurement indicator in not only industry but also academic research study. In the 1950s, Markowitz used the expected rate of return, variance and covariance to determine the efficient frontier of investment. Each portfolio on the boundary either maximizes its expected return given the variance, or has a minimized variance given a target rate of return. In later studies, many scholars found that investors' views on risk are not symmetrical, instead, they pay more attention to the downside risk of financial assets. Later, \cite{MH1991} further proposed two indicators to measure the downside risk: mean downside semi variance $\text{SV}_{m}$ and target downside semi variance $\text{SV}_{t}$:
+\begin{equation}
+\begin{aligned}
+    \text{SV}_{m} &= \frac{1}{T} \sum_{t=1}^T \max \left[0, E(R_{t})-R_{t}\right]^2 \\
+    \text{SV}_{m} &=\frac{1}{T} \sum_{t=1}^T \max \left[0, R^*-R_t\right]^2
+\end{aligned}        
+\end{equation}
+
+\noindent 
+where $E(R_{t})$ is the average rate of return, and $R^*$ is the target rate of return.
+The above indicators assigned a great impact on asset portfolio theory, but they have also caused great controversy on the description of the skewness of the financial asset distribution.
+\cite{BV1975} first proposed the concept of lower partial moment, LPM, which defined as follow:
+\begin{equation}
+ \begin{aligned}
+    \text{LPM}(a, t)=\frac{1}{T} \sum_{t=1}^T \max \left[0,\left(R^*-R_t\right)\right]^a
+\end{aligned}       
+\end{equation}
+\noindent 
+where $a$ is the order of the lower partial moment, and $R^*$is the target rate of return. 1) When $a=0$, LPM represents the probability lower than the target rate of return; 2) When $a=1$, LPM is the average value that is lower than the target rate of return. This indicator can then be used to represent risk-neutral investors; 3) When $a=2$, LPM is the risk below the target rate of return, which can be used to describe risk-averse investors; 4) As $a$ increases, investors become more risk averse. Following a long period of time, the method of determining the order $a$ of LPM has attracted great attention from the academic community, and many related algorithms and research on the properties of LPM have been fast developed.
+
+\subsubsection{Value at Risk Indicators}
+Besides the risk metrics mentioned above, J. P. Morgan introduced the concept of VaR in 1994 in response to the financial disasters of the 1990s. It is defined as follows
+\begin{equation}
+\operatorname{VaR}_\alpha(X)=-q_\alpha(X)=-\inf \{x: P[X \leq x] \geq \alpha\}    
+\end{equation}
+where $X$ is a given random variable, and $\alpha$ is the confidence level.
+This indicator was widely noticed by researchers and practitioners at that time. However, with the in-depth of research, this indicator has been questioned a lot. It does not meet the consistency condition of risk measurement indicators proposed by \cite{AP1999Coherentmeasures}, so it cannot measure the tail risk and the risk of occurrence of the extreme events. \cite{AP1999Coherentmeasures} proposed a new risk measurement indicator called conditional value at risk CVaR, which is defined as the following
+\begin{equation}
+ \operatorname{CVaR}_\alpha(X)=-E\left[X \leq q_\alpha(X)\right]   
+\end{equation}
+where $X$ is required to be a continuous random variable. This indicator can make up for the disadvantage of VaR, because it is consistent and compatible, and can better measure the tail risk. \cite{RR2002}believed that another defect of VaR index is that it cannot describe the degree of loss after the loss exceeds the critical value of the index. It only provides a minimum limit for the loss at the tail of the loss distribution with optimism rather than following the conservatism that prevails in risk management. Additionally, they believe that compared with VaR, the advantages of CVaR indicators include its subadditivity, measurability of risks exceeded VaR, and ability to solve the optimization problem of large-scale asset portfolios. However, CVaR is no longer a consistent measure of risk whenever the density of loss function is not continuous. Therefore, \cite{TD2002} brought up the concept of Expected Shortfall $ES$:
+\begin{equation}
+ ES(\alpha)=\frac{\int_0^\alpha \operatorname{VaR}(u) du}{\alpha}    
+\end{equation}
+This indicator overcomes the disadvantages of $\text{CVaR}_{\alpha}(X)$, and has been widely used in practice.
+\subsection{Risk Parity Model}
+Markowitz model represents a new stage of the development of modern portfolio theory. The model has been improved by scholars with respect to strong parameter sensitivity and insufficient risk measurement. At the same time, many scholars and practitioners began to focus on other asset portfolio models.\\
+Bridgewater Associates first proposed the idea of risk parity in 1996, and created the All Weather(AW) strategy. The core idea of the model is to equates the risk of each asset by determining their weights in the asset portfolio. The total risk $\boldsymbol{\mathcal{R}}_\mathbf{p}(\vec{w})$ of a portfolio can be written as:
+ \begin{equation}
+\boldsymbol{\mathcal{R}}_{\mathbf{p}}=\sqrt{\vec{w}^T \Sigma \vec{w}}  
+ \end{equation}
+The marginal risk $\boldsymbol{M}\boldsymbol{\mathcal{R}}(X_{i})$ and the risk contribution $\boldsymbol{\mathcal{R}}\boldsymbol{C}(X_{i})$ of each asset $i$ to the portfolio can be written as:
+\begin{equation}
+\begin{aligned}
+\boldsymbol{M}\boldsymbol{\mathcal{R}}\left(X_i\right)&=\frac{\partial \boldsymbol{\mathcal{R}}_{\mathbf{p}}}{\partial w_i}\\
+\boldsymbol{\mathcal{R}}\boldsymbol{C}\left(X_i\right)&=w_i \frac{\partial \boldsymbol{R}_\mathbf{p}}{\partial w_i}=w_i \frac{(\Sigma \vec{w})_i}{\sqrt{\vec{w}^T \sum \vec{w}}}  
+    \end{aligned}
+\end{equation}
+Later, \cite{QE2002} conducted an empirical analysis using the Russell 1000 Index and the Exchange Traded Funds, and found that the performance of the investment portfolio based on the risk parity model was significantly better than that of a single financial asset. At the same time, the strategy obtained by the risk parity model has a higher average rate of return and Sharpe ratio, which proves that the risk parity model can disperse risks and improve the robustness of returns.
