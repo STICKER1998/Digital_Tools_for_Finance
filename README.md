@@ -59,7 +59,7 @@ All of the python codes are given in the folder `src\python`, you can run it in 
 ## Interactive App Based on R Shiny
 We create an interactive app using R shiny called `app.R` to show the plots of the daily return, the assets correlation coeffient, weights, and the net values in general cases. Specifically, we can determine `Output` to show the different kinds of plots and choose `Start Date` and `End Date` to determine the date interval.
 
-If you don't want to run by yourself, you can use the link to get the result on website.
+If you don't want to run by yourself, you can use the link to get the result on website `shinyapps.io`:
 
 [`DTFF-Final-Project-Rshiny-results`](https://sticker98.shinyapps.io/shiny/?_ga=2.200801197.263085363.1671393522-251602509.1671393522)
 
