@@ -3,6 +3,13 @@ Final_Project
 
 This is the final Project for DTFF
 
+## PATHFILE
+In order to avoid using absolute addresses, we define a path variable `PATHFILE` to denote the Root directory for this project, you need to change it when using `MATLAB` codes in `\src` and `R` codes in `\app`. 
+    1.`MATLAB` codes: you only need to change the `PATHFILE` in the `main_function.m`;
+    2.`r` codes: you only need to change the `PATHFILE` in the `app.r`;
+The example of  `PATHFILE` is:
+```
+```
 Data Store
 ---------------
     ├── data
@@ -17,8 +24,8 @@ The folder `data` have two folders `raw` and `result`
 We offer two types of codes for this project: `Python` and `Matlab`, you can run all of them using your IDE and the environment setting would be given later. For `Python` code, we also offer a way to run it in `docker`, while we only offer a simple dockerfile for matlab code since you need to update some toolboxes by yourself.
 ### 1.Python Codes
 We use the python code to implement the risk parity model in our report, while it would only give you the results of the model which include:
-1. The weights of assets; (.xlsx)
-2. The net value of portfolio; (.xlsx)
+1. The weights of assets in the model; (.xlsx)
+2. The net value of portfolio based on different models; (.xlsx)
 and all of figures in the report are drawn by MATLAB code.
 
 All of the python codes are given in the folder `src\python`, you can run it in the ways
