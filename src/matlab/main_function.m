@@ -1,4 +1,9 @@
 % Path Setting
+% Warning: If it's the first time for you to run this codes, please install
+% Optimization Toolbox and Parallel Computing Toolbox at first and run
+% parpool function
+
+% parpool(n) % you can choose n depending on your computer
 FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
 addpath(FILEPATH+'\src\matlab\data');
 addpath(FILEPATH+'\src\matlab\model');
