@@ -14,15 +14,17 @@ FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
 ```
 Note: You don't need to change the `FILEPATH` in the python codes unless you can't run the `main.py` directly due to the path error, since we have used `os` to find the absolute path of your root directory automatically.
 
-Data Store
+Database Present
 ---------------
     ├── data
-    │   ├── raw       <- python and matlab codes would read data from this folder, the data we offered in .feather and \.xlsx form.
-    │   ├── result      
-    │          ├── matlab      <- The final data given by matlab codes
-    │          └── python            <- The final data given by python codes
+    │   ├── raw     (out)  ---> python and matlab codes would read data from this folder, the data we offered in .feather and \.xlsx form.
+    │   ├── result  (out)  ---> This datas would be used in Rshiny
+    │          ├── matlab    (in)  <--- The final data given by matlab codes  
+    │          └── python    (in)  <--- The final data given by python codes
 ---------------
-The folder `data` have two folders `raw` and `result`
+The folder `data` have two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
+In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
+
 
 ## Codes and Environments
 We offer two types of codes for this project: `Python` and `Matlab`, you can run all of them using your IDE and the environment setting would be given later. For `Python` code, we also offer a way to run it in `docker`, while we only offer a simple dockerfile for matlab code since you need to update some toolboxes by yourself.
