@@ -71,7 +71,8 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    **Note**: if you run the codes at first time, please write the function `parpool(n)` in the `main_function.m` to set your parallel computing numbers, n must be smaller than the kernels of your computer. 
    
 ### 3.Important Hints
-    Since we used parallel computing in `Matlab` codes, so it would be much faster than the `python` codes, it is normal that the python code takes a very long time to run. Therefore, we would give you a **flag** to show that the code runs normally such as
+Since we used parallel computing in `Matlab` codes, so it would be much faster than the `python` codes, it is normal that the python code takes a very long time to run. Therefore, we would give you a **flag** to show that the code runs normally such as
+    
     ```
     Model based on Std Start:
     Process: 5%
