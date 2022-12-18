@@ -1,8 +1,13 @@
+install.packages("readxl")
+install.packages("shiny")
+install.packages("ggplot2")
+install.packages("ggcorrplot")
+install.packages("reshape2")
 library(readxl)
 library(shiny)
 library(ggplot2)
 library(ggcorrplot)
-
+library(reshape2)
 ui <- fluidPage(
   
   titlePanel("Digital Tools for Finance"),
@@ -24,7 +29,7 @@ ui <- fluidPage(
                   min = as.Date("2015-01-06","%Y-%m-%d"),
                   max = as.Date("2019-12-31","%Y-%m-%d"),
                   value=as.Date("2019-12-31"),timeFormat="%Y-%m-%d"),
-
+      
     ),
     
     mainPanel(
@@ -47,23 +52,24 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
-
-  df <- read_excel("r_data.xlsx")
+  DATAPATH = "../data/"
+  df <- read_excel(paste0(DATAPATH,"raw/r_data.xlsx"))
   df$Year <- as.Date(df$Year)
+  
+  df_ws <- read_excel(paste0(DATAPATH,"result/weight_stock.xlsx"))
+  df_wb <- read_excel(paste0(DATAPATH,"result/weight_bond.xlsx"))
+  df_wg <- read_excel(paste0(DATAPATH,"result/weight_gold.xlsx"))
+  df_nv <- read_excel(paste0(DATAPATH,"result/Net_values.xlsx"))
 
-  df_ws <- read_excel("weight_stock.xlsx")
-  df_wb <- read_excel("weight_bond.xlsx")
-  df_wg <- read_excel("weight_gold.xlsx")
-  df_nv <- read_excel("Net_values.xlsx")
   df_ws$Time <- as.Date(df_ws$Time)
   df_wb$Time <- as.Date(df_wb$Time)
   df_wg$Time <- as.Date(df_wg$Time)
   df_nv$Time <- as.Date(df_nv$Time)
   
   dataInput <- reactive({
-  start = input$start
-  end = input$end
-  df <- df[(df$Year >= start & df$Year <= end),]
+    start = input$start
+    end = input$end
+    df <- df[(df$Year >= start & df$Year <= end),]
   })
   
   wsdataInput <- reactive({
@@ -98,14 +104,14 @@ server <- function(input, output) {
   
   output$StockPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
-  ggplot(data = dataInput(), 
-         aes(x = Year, y = Stock)) + 
-    geom_line(color = "darkred") + 
-    scale_x_date(date_labels = "%Y-%m-%d") + 
-    theme(axis.text=element_text(size=16),
-          axis.title=element_text(size=16,face="bold"),
-          axis.text.x = element_text(angle = 30,hjust=1),
-          axis.title.x = element_blank())
+      ggplot(data = dataInput(), 
+             aes(x = Year, y = Stock)) + 
+        geom_line(color = "darkred") + 
+        scale_x_date(date_labels = "%Y-%m-%d") + 
+        theme(axis.text=element_text(size=16),
+              axis.title=element_text(size=16,face="bold"),
+              axis.text.x = element_text(angle = 30,hjust=1),
+              axis.title.x = element_blank())
     } else {
       ggplot(data = wsdataInput(), aes(x = Time, y = value, color = variable, group = variable)) + 
         geom_line() + ggtitle("Stock Weight")+
@@ -123,14 +129,14 @@ server <- function(input, output) {
   
   output$BondPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
-    ggplot(data = dataInput(), 
-           aes(x = Year, y = Bond)) + 
-      geom_line(color = "darkblue") + 
-      scale_x_date(date_labels = "%Y-%m-%d") + 
-      theme(axis.text=element_text(size=16),
-            axis.title=element_text(size=16,face="bold"),
-            axis.text.x = element_text(angle = 30,hjust=1),
-            axis.title.x = element_blank())
+      ggplot(data = dataInput(), 
+             aes(x = Year, y = Bond)) + 
+        geom_line(color = "darkblue") + 
+        scale_x_date(date_labels = "%Y-%m-%d") + 
+        theme(axis.text=element_text(size=16),
+              axis.title=element_text(size=16,face="bold"),
+              axis.text.x = element_text(angle = 30,hjust=1),
+              axis.title.x = element_blank())
     } else {
       ggplot(data = wbdataInput(), aes(x = Time, y = value, color = variable, group = variable)) + 
         geom_line() + ggtitle("Bond Weight")+
@@ -148,14 +154,14 @@ server <- function(input, output) {
   
   output$GoldPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
-    ggplot(data = dataInput(), 
-           aes(x = Year, y = Gold)) +
-      geom_line(color = "darkgreen") + 
-      scale_x_date(date_labels = "%Y-%m-%d") + 
-      theme(axis.text=element_text(size=16),
-            axis.title=element_text(size=16,face="bold"),
-            axis.text.x = element_text(angle = 30,hjust=1),
-            axis.title.x = element_blank())
+      ggplot(data = dataInput(), 
+             aes(x = Year, y = Gold)) +
+        geom_line(color = "darkgreen") + 
+        scale_x_date(date_labels = "%Y-%m-%d") + 
+        theme(axis.text=element_text(size=16),
+              axis.title=element_text(size=16,face="bold"),
+              axis.text.x = element_text(angle = 30,hjust=1),
+              axis.title.x = element_blank())
     }else {
       ggplot(data = wgdataInput(), aes(x = Time, y = value, color = variable, group = variable)) + 
         geom_line() + ggtitle("Gold Weight")+
@@ -173,12 +179,12 @@ server <- function(input, output) {
   
   output$CorPlot <- renderPlot({
     if (typeInput() == "Daily Return") {
-    df <- read_excel("r_data.xlsx")
-    df$Year <- as.Date(df$Year)
-    start = input$start
-    end = input$end
-    ggcorrplot(cor(df[(df$Year >= start & df$Year <= end),2:4]), 
-               colors = c("#6D9EC1", "white", "#E46726"), lab =TRUE)
+      df <- read_excel(paste0(DATAPATH,"raw/r_data.xlsx"))
+      df$Year <- as.Date(df$Year)
+      start = input$start
+      end = input$end
+      ggcorrplot(cor(df[(df$Year >= start & df$Year <= end),2:4]), 
+                 colors = c("#6D9EC1", "white", "#E46726"), lab =TRUE)
     }else {
       ggplot(data = nvdataInput(), aes(x = Time, y = value, color = variable, group = variable)) + 
         geom_line() + ggtitle("Net Values")+
@@ -193,8 +199,6 @@ server <- function(input, output) {
               legend.position="bottom")
     }
   })
-  
-
 }
 
 shinyApp(ui, server)
