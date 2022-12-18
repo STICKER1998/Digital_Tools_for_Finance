@@ -19,9 +19,11 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    1) Go in the folder `docker\python` using command Lines;
    2) Open the docker and run the command line:
    ```
+   docker build --tag dtff-python .
    ```
    and 
    ```
+   docker run -it -v "$(pwd)/data:/result" dtff-python
    ```
    3) Then you would see all of the results are shown in the folder `docker\python\data\result`.
    
