@@ -36,8 +36,6 @@ The example of  `FILEPATH` is:
 ```
 FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
 ```
-Note: You don't need to change the `FILEPATH` in the python codes unless you can't run the `main.py` directly due to the path error, since we have used `os` to find the absolute path of your root directory automatically.
-
 
 ## Codes and Environments
 We offer two types of codes for this project: `Python` and `Matlab`, you can run all of them using your IDE and the environment setting would be given later. For `Python` code, we also offer a way to run it in `docker`, while we only offer a simple dockerfile for matlab code since you need to update some toolboxes by yourself.
