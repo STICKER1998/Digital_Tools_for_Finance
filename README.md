@@ -10,16 +10,19 @@ Database Present
 ---------------
 ---------------
     ├── data
-    │   ├── raw     (out)  ---> python and matlab codes would read data from this folder, the data we offered in .feather and \.xlsx form.
+    │   ├── raw     (out)  ---> python and matlab codes would read data from this folder, the data we offered in .ftr and .xlsx form.
     │   ├── result  (out)  ---> This datas would be used in Rshiny
     │          ├── matlab    (in)  <--- The final data given by matlab codes  
     │          └── python    (in)  <--- The final data given by python codes
+
 ---------------
 
 ### Remarks
 1. The folder `data` have two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
 2. In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
 3. For the user who wants to run the `python` code in `docker`, we set a independent database in the folder `docker\python` because we don't want to copy the `\data` folder in the root directory to docker container.
+4. In order to try new data types, we read in `feather` type data in the python code.
+5. The raw data "Original_Closing_Price" is got from choice in china.
 
 ### FILEPATH
 In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project. However, you **don't need** to change it when using any codes in `\scr` and `\app` folders since 
