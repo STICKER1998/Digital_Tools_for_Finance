@@ -3,7 +3,12 @@ Final_Project
 
 This is the final Project for DTFF
 
-## 
+## Teammates
+|Name        | Student Number|
+| ---        |---            |
+|Zifeng Tang |  21-742-093   |
+| Haoran Zhu |  21-742-069   |
+| Yuzhi Mao  |  21-742-218   |
 
 ## Database 
 Database Present
