@@ -30,10 +30,10 @@ Database Present
 5. The raw data "Original_Closing_Price" is got from choice in china.
 
 ### FILEPATH
-In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project. However, you **don't need** to change it when using any codes in `\scr` and `\app` folders since 
-1. `python`: we used `os` library to solve it;
-2. `matlab`: we used `cd(..)` and `CURRENT_PATH=pwd` to solve it;
-3. `r`: we used `..\` when reading the datas;
+In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project. However, you **don't need** to change it when using any codes in `\scr` and `\app` folders if you  
+1. Run `python` in VScode directly: we used `os` library to solve it; 
+2. Run `matlab` in Matlab: we used `cd(..)` and `CURRENT_PATH=pwd` to solve it;
+3. Run `r` in VScode directly;
 
 However, if you indeed want to **change the path of root directory**, what you need to do can be listed as
 1. `Python` codes: you only need to change the `FILEPATH` in the `main.py`;
