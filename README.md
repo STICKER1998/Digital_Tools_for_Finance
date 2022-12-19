@@ -39,7 +39,19 @@ If you want to clone the repo to VS Code directly, we need you to change the FIL
 1 .`\scr\python\main.py`;
 2 .`\app\app.R`;
 
-Eg:
+```
+eg1: for `main.py`
+# If you run the code in your own IDE
+FILEPATH=os.path.abspath(os.path.join(os.getcwd(),"../.."))
+# If you run the code in VSCode in the entire repo: I mean clone the all repo into VScode
+FILEPATH=os.path.abspath(os.path.join(os.getcwd()))
+```
+
+```
+eg2: for `app.r`
+
+
+
 
 
 However, if you indeed want to **change the path of root directory**, what you need to do can be listed as
