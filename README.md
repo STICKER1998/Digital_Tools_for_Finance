@@ -1,6 +1,6 @@
 Final Project
 ==============================
-This is the final Project for DTFF: Risk Parity Model based on MVT
+This is the Final Project for DTFF: **Risk Parity Model based on MVT**
 
 ## Teammates
 |Name        | Student Number|
@@ -22,7 +22,7 @@ Database Present
 ---------------
 
 ### Remarks
-1. The folder `data` have two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
+1. The folder `data` has two folders `raw` and `result`, `(out)` means we get datas from the database and `(in)` means we put the datas into the database.
 2. In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
 3. For the user who wants to run the `python` code in `docker`, we set a independent database in the folder `docker\python` because we don't want to copy the `\data` folder in the root directory to docker container.
 4. In order to try new data types, we read in `feather` type data in the python code.
@@ -80,9 +80,9 @@ All of the python codes are given in the folder `src\python`, you can run it in 
    ```
    and 
    ```
-   docker run -it -v "$(pwd)/data:/result" dtff-python
+   docker run -it -v "$(pwd)/out:/out" dtff-python
    ```
-   3) Then you would see all of the results are shown in the folder `docker\python\data\result`.
+   3) Then you would see all of the results are shown in the folder `docker\python\out`.
    
 
 ### 2.Matlab Codes     
@@ -111,6 +111,7 @@ The slides of our final assignment is called `DTFF_Presentation.pdf` and the LaT
 
 ## Interactive App Based on R Shiny
 We create an interactive app using R shiny whose code is in `app/app.R` to show the plots of the daily return, the assets correlation coeffient, weights, and the net values in general cases. Specifically, we can determine `Output` to show the different kinds of plots and choose `Start Date` and `End Date` to determine the date interval.
+And all packages have been listed in the requirements.txt.
 
 If you don't want to run by yourself, you can use the link to get the result on website `shinyapps.io`:
 
@@ -154,10 +155,10 @@ If you don't want to run by yourself, you can use the link to get the result on 
     |       |   ├── downstream.py
     |       |
     |       ├── model
-    |           └── Risk_Parity.py
-    │ 
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+                └── Risk_Parity.py
+   
+    
+    
 
 
 --------
