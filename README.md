@@ -107,7 +107,7 @@ Since we used parallel computing in `Matlab` codes, so it would be much faster t
 ## Report and Slides
 The report of our final assignment is called [`DTFF_report_final.pdf`](./reports/DTFF_report_final.pdf) and the LaTeX-interpretable code and the used figures are included in the folder `reports`. 
 
-The slides of our final assignment is called `DTFF_Presentation.pdf` and the LaTeX-interpretable code and the used figures are included in the folder `slides`. 
+The slides of our final assignment is called [`DTFF_Presentation.pdf`](./slides/DTFF_Presentation.pdf) and the LaTeX-interpretable code and the used figures are included in the folder `slides`. 
 
 ## Interactive App Based on R Shiny
 We create an interactive app using R shiny whose code is in `app/app.R` to show the plots of the daily return, the assets correlation coeffient, weights, and the net values in general cases. Specifically, we can determine `Output` to show the different kinds of plots and choose `Start Date` and `End Date` to determine the date interval.
