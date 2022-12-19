@@ -49,10 +49,9 @@ FILEPATH=os.path.abspath(os.path.join(os.getcwd()))
 
 ```
 eg2: for `app.r`
-# If you run R codes in the repo in VScodes 
-  # DATAPATH <- "data/"
-
-  # Otherwise if you run rcodes in rstudio
+# If you run R code in VScodes in the entire repo: I mean clone the all repo into VScode
+   DATAPATH <- "data/"
+# Otherwise if you run rcodes in rstudio
    DATAPATH <- "../data/"
 ```
 But we do not recommend you to do this, because you may need to do some other operations to adapt to the Vscode environment to achieve the purpose of running `.py`, `.tex`, `.r` three types of files in the same project. However, we also export the environment as [`Digital_Tools_for_Finance.yml `](./Digital_Tools_for_Finance.yml).
