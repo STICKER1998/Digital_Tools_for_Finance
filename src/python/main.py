@@ -1,8 +1,10 @@
 import os
 import sys
 import pandas as pd
+# If you run the code in VSCode directly: I mean clone the all repo into VScode
 FILEPATH=os.path.abspath(os.path.join(os.getcwd()))
-print(FILEPATH)
+# If you run the code in your own IDE
+# FILEPATH=os.path.abspath(os.path.join(os.getcwd(),"../.."))
 sys.path.append(FILEPATH+"\src\python\data")
 from MakeData import Read_Data,Write_Data
 sys.path.append(FILEPATH+"\src\python\model")
