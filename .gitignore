@@ -5,6 +5,18 @@
 # Junk File for Matlab codes
 *.asv
 
+# Junk File for Latex 
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.syntex.gz
+*.toc
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

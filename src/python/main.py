@@ -1,7 +1,8 @@
 import os
 import sys
 import pandas as pd
-FILEPATH=os.path.abspath(os.path.join(os.getcwd(), "../.."))
+FILEPATH=os.path.abspath(os.path.join(os.getcwd()))
+print(FILEPATH)
 sys.path.append(FILEPATH+"\src\python\data")
 from MakeData import Read_Data,Write_Data
 sys.path.append(FILEPATH+"\src\python\model")
