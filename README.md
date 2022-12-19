@@ -49,12 +49,14 @@ FILEPATH=os.path.abspath(os.path.join(os.getcwd()))
 
 ```
 eg2: for `app.r`
+# If you run R codes in the repo in VScodes 
+  # DATAPATH <- "data/"
 
+  # Otherwise if you run rcodes in rstudio
+   DATAPATH <- "../data/"
+```
 
-
-
-
-However, if you indeed want to **change the path of root directory**, what you need to do can be listed as
+Moreover, if you indeed want to **change the path of root directory**, what you need to do can be listed as
 1. `Python` codes: you only need to change the `FILEPATH` in the `main.py`;
 2. `MATLAB` codes: you only need to change the `FILEPATH` in the `main_function.m`;
 3. `r` codes: you only need to change the `FILEPATH` in the `app.r`;
