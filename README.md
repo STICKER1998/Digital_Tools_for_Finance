@@ -1,7 +1,6 @@
-Final_Project
+Final Project
 ==============================
-
-This is the final Project for DTFF
+This is the final Project for DTFF: Risk Parity Model based on MVT
 
 ## Teammates
 |Name        | Student Number|
