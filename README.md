@@ -55,6 +55,7 @@ eg2: for `app.r`
   # Otherwise if you run rcodes in rstudio
    DATAPATH <- "../data/"
 ```
+But we do not recommend you to do this, because you may need to do some other operations to adapt to the Vscode environment to achieve the purpose of running `.py`, `.tex`, `.r` three types of files in the same project. However, we also export the environment as [`Digital_Tools_for_Finance.yml `](./Digital_Tools_for_Finance.yml).
 
 Moreover, if you indeed want to **change the path of root directory**, what you need to do can be listed as
 1. `Python` codes: you only need to change the `FILEPATH` in the `main.py`;
