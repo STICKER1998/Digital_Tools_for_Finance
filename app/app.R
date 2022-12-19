@@ -1,13 +1,15 @@
-install.packages("readxl")
-install.packages("shiny")
-install.packages("ggplot2")
-install.packages("ggcorrplot")
-install.packages("reshape2")
+# install.packages("readxl")
+# install.packages("shiny")
+# install.packages("ggplot2")
+# install.packages("ggcorrplot")
+# install.packages("reshape2")
+
 library(readxl)
 library(shiny)
 library(ggplot2)
 library(ggcorrplot)
 library(reshape2)
+
 ui <- fluidPage(
   titlePanel("Digital Tools for Finance"),
   sidebarLayout(
@@ -56,8 +58,14 @@ ui <- fluidPage(
 )
 
 
+
 server <- function(input, output) {
-  DATAPATH <- "../data/"
+  # If you run R codes in VScodes directly 
+  DATAPATH <- "data/"
+
+  # Otherwise if you run rcodes in rstudio
+  # DATAPATH <- "../data/"
+
   df <- read_excel(paste0(DATAPATH, "raw/r_data.xlsx"))
   df$Year <- as.Date(df$Year)
 
@@ -232,5 +240,4 @@ server <- function(input, output) {
     }
   })
 }
-
-shinyApp(ui, server)
+print(shinyApp(ui, server))
