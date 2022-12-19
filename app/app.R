@@ -60,11 +60,11 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
-  # If you run R codes in VScodes directly 
-  DATAPATH <- "data/"
+  # If you run R codes in the repo in VScodes 
+  # DATAPATH <- "data/"
 
   # Otherwise if you run rcodes in rstudio
-  # DATAPATH <- "../data/"
+   DATAPATH <- "../data/"
 
   df <- read_excel(paste0(DATAPATH, "raw/r_data.xlsx"))
   df$Year <- as.Date(df$Year)
@@ -240,4 +240,5 @@ server <- function(input, output) {
     }
   })
 }
+shinyApp(ui, server)
 print(shinyApp(ui, server))
