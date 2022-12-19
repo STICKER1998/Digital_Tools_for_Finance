@@ -35,7 +35,7 @@ In order to avoid using absolute addresses, we define a path variable `FILEPATH`
 2. Run `matlab` in Matlab: we used `cd(..)` and `CURRENT_PATH=pwd` to solve it;
 3. Run `r` in Rstudio: we used `..\` when reading datas;
 
-If you want to clone the repo to VS Code directly, we need you to change the FILEPATH by instructions in the codes
+**If you want to clone the repo to VS Code directly, you need to change the FILEPATH by instructions in the codes**
 1 .`\scr\python\main.py`;
 2 .`\app\app.R`;
 
