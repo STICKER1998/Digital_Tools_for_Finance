@@ -1,3 +1,0 @@
-*.yml linguist-language=Python
-*.m linguist-language=MATLAB
-*.makefile linguist-language=MATLAB
