@@ -1,2 +1,0 @@
-docker build --tag dtff-python .
-docker run -it -v "$(pwd)/out:/out" dtff-python
