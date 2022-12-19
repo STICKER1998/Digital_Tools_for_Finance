@@ -26,7 +26,7 @@ Database Present
 2. In order to be convenient for the users, `python` and `matlab` codes in the folder `\scr` and `r` code in the folder `\app` would get or put datas with the folder `\data`, which means it is a small database.
 3. For the user who wants to run the `python` code in `docker`, we set a independent database in the folder `docker\python` because we don't want to copy the `\data` folder in the root directory to docker container.
 4. In order to try new data types, we read in `feather` type data in the python code.
-5. The raw data "Original_Closing_Price" is got from choice in china.
+5. The raw data "Original_Closing_Price" is got from choice software in china.
 
 ### FILEPATH
 In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project. However, you **don't need** to change it when using any codes in `\scr` and `\app` folders if you  
