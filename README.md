@@ -113,7 +113,7 @@ The slides of our final assignment is called `DTFF_Presentation.pdf` and the LaT
 We create an interactive app using R shiny whose code is in `app/app.R` to show the plots of the daily return, the assets correlation coeffient, weights, and the net values in general cases. Specifically, we can determine `Output` to show the different kinds of plots and choose `Start Date` and `End Date` to determine the date interval.
 And all packages have been listed in the requirements.txt.
 
-If you don't want to run by yourself, you can use the link to get the result on website `shinyapps.io`:
+**If you don't want to run by yourself, you can use the link to get the result on website** `shinyapps.io`:
 
 [`DTFF-Final-Project-Rshiny-results`](https://sticker98.shinyapps.io/shiny/?_ga=2.200801197.263085363.1671393522-251602509.1671393522)
 
