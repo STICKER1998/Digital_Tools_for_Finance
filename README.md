@@ -33,17 +33,20 @@ Database Present
 In order to avoid using absolute addresses, we define a path variable `FILEPATH` to denote the Root directory for this project. However, you **don't need** to change it when using any codes in `\scr` and `\app` folders if you  
 1. Run `python` in VScode directly: we used `os` library to solve it; 
 2. Run `matlab` in Matlab: we used `cd(..)` and `CURRENT_PATH=pwd` to solve it;
-3. Run `r` in VScode directly;
+3. Run `r` in Rstudio: we used `..\` when reading datas;
+
+If you want to clone the repo to VS Code directly, we need you to change the FILEPATH by instructions in the codes
+1 .`\scr\python\main.py`;
+2 .`\app\app.R`;
+
+Eg:
+
 
 However, if you indeed want to **change the path of root directory**, what you need to do can be listed as
 1. `Python` codes: you only need to change the `FILEPATH` in the `main.py`;
 2. `MATLAB` codes: you only need to change the `FILEPATH` in the `main_function.m`;
 3. `r` codes: you only need to change the `FILEPATH` in the `app.r`;
 
-The example of  `FILEPATH` is:
-```
-FILEPATH = "C:\Users\Desktop\Digital_Tools_for_Finance";
-```
 
 ## Codes and Environments
 We offer two types of codes for this project: `Python` and `Matlab`, you can run all of them using your IDE and the environment setting would be given later. For `Python` code, we also offer a way to run it in `docker`, while we only offer a simple dockerfile for matlab code since you need to update some toolboxes by yourself.
