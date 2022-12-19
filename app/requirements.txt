@@ -1,0 +1,5 @@
+readxl==1.4.1
+shiny==1.7.4
+ggplot2==3.4.0
+ggcorrplot==0.1.4
+reshape2==1.4.4
