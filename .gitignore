@@ -17,6 +17,8 @@
 *.synctex
 *.gz
 *.toc
+*.nav
+*.snm
 
 
 # Byte-compiled / optimized / DLL files
