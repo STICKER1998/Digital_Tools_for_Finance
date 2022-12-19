@@ -96,8 +96,6 @@ If you don't want to run by yourself, you can use the link to get the result on 
 # Project Organization
 ------------
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
     │   ├── raw       <- python and matlab codes would read data from this folder, the data we offered in .feather and \.xlsx form.
@@ -107,27 +105,31 @@ If you don't want to run by yourself, you can use the link to get the result on 
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+    ├── reports            <- Generated analysis as LaTeX
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
     │
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src──                <- Source code for use in this project.
     │   ├── matlab 
-    |   |   
-    │   │
+    |       ├──data     <- The codes used to read datas
+    |       |  
+    │       ├──features <- The codes used to calculate the features that used in model
+    |       |
+    |       ├──model    <- Risk_parity model
+    |       |
+    |       ├──visualization <- Plot the results
+    |       |
     │   ├── python
-    |   |   └── __init__.py    <- Makes src a Python module
-    |   |   |  
-    |   |   ├── main.py <- The main function to run all the codes
-    |   |   |
-    |   |   ├── data <- Scripts to download or generate data
-    │   |   |   └── MakeData.py
-    |   |   |   ├── 
-    |   |   |
-    |   |   ├── model
+    |       └── __init__.py    <- Makes src a Python module
+    |       |  
+    |       ├── main.py <- The main function to run all the codes
+    |       |
+    |       ├── data <- Scripts to download or generate data
+    │       |   ├── MakeData.py
+    |       |   ├── downstream.py
+    |       |
+    |       ├── model
     |           └── Risk_Parity.py
     │ 
     │
