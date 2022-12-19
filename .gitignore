@@ -13,7 +13,9 @@
 *.fls
 *.log
 *.out
-*.syntex.gz
+*.synctex.gz
+*.synctex
+*.gz
 *.toc
 
 
