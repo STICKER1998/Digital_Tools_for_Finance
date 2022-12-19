@@ -105,7 +105,7 @@ Since we used parallel computing in `Matlab` codes, so it would be much faster t
     ```
     
 ## Report and Slides
-The report of our final assignment is called `DTFF_report_final.pdf` and the LaTeX-interpretable code and the used figures are included in the folder `reports`. 
+The report of our final assignment is called [`DTFF_report_final.pdf`](./reports/DTFF_report_final.pdf) and the LaTeX-interpretable code and the used figures are included in the folder `reports`. 
 
 The slides of our final assignment is called `DTFF_Presentation.pdf` and the LaTeX-interpretable code and the used figures are included in the folder `slides`. 
 
