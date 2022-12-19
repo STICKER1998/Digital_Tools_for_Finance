@@ -310,22 +310,22 @@ def Write_Data(w_std,w_VaR,w_ES,values_std,values_VaR,values_ES,date,month_index
     data1 = {"Time": date[month_index[3] - 1:], "value_std": values_std.T[0], "value_VaR": values_VaR.T[0],
              "value_ES": values_ES.T[0]}
     data1 = pd.DataFrame(data1)
-    data1.to_excel("Date\Result\Values.xlsx")
+    data1.to_excel("/out/Values.xlsx")
 
     data2 = {"Time": date[month_index[3]:], "w_std_stock": w_std[0, :], "w_VaR_stock": w_VaR[0, :],
              "w_ES_stock": w_ES[0, :]}
     data2 = pd.DataFrame(data2)
-    data2.to_excel("Date\Result\weight_stock.xlsx")
+    data2.to_excel("/out/weight_stock.xlsx")
 
     data3 = {"Time": date[month_index[3]:], "w_std_stock": w_std[0, :], "w_VaR_stock": w_VaR[0, :],
              "w_ES_stock": w_ES[0, :]}
     data3 = pd.DataFrame(data3)
-    data3.to_excel("Date\Result\weight_bond.xlsx")
+    data3.to_excel("/out/weight_bond.xlsx")
 
     data4 = {"Time": date[month_index[3]:], "w_std_stock": w_std[0, :], "w_VaR_stock": w_VaR[0, :],
              "w_ES_stock": w_ES[0, :]}
     data4 = pd.DataFrame(data4)
-    data4.to_excel("Date\Result\weight_gold.xlsx")
+    data4.to_excel("/out/weight_gold.xlsx")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
